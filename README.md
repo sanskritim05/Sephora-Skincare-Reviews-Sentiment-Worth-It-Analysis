@@ -108,7 +108,7 @@ cd Sephora-Skincare-Reviews-Sentiment
 
 ### 2) Put the dataset in the right folders
 Your project should include:
-```
+``` bash
 data/
 ├── product_info.csv
 ├── reviews_0-25000.csv
