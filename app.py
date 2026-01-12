@@ -236,19 +236,6 @@ with tab_products:
     st.write("**Average price (USD): $**", f"{row['price_usd']:.2f}")
     st.write("**Price-based value score (higher = cheaper relative to other products):**", f"{row['value_score']:.3f}")
 
-    with st.expander("How the Worth It Score is calculated", expanded=False):
-        st.markdown(
-            """
-            - **Adjusted rating** uses Bayesian smoothing to reduce overconfidence from low-review products.
-            - **Adjusted positive rate** is the Bayesian-smoothed share of reviews predicted as positive.
-            - **Value score** normalizes price (cheaper products get a small boost).
-
-            **Final score formula:**
-
-            `0.4 × adj_rating_norm + 0.4 × adj_pos_rate + 0.2 × value_score`
-            """
-        )
-
 # brands tab
 with tab_brands:
     st.subheader("Brands")
@@ -411,7 +398,3 @@ with tab_brands:
             key="brand_download_top_products"
         )
 
-# footer
-st.caption(
-    "Note: Rankings reflect aggregate review trends and do not account for individual skin type, allergies, or ingredient sensitivities."
-)
